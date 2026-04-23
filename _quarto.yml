@@ -1,12 +1,23 @@
 project:
   type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - about.qmd
+
 
 website:
-  title: "spatial_auditing"
+  title: "Spatial Auditing Manchester"
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: spatial_auditing.html
+        text: Spatial Auditing method
+      - href: OUT/MAP/manchester_scores.html
+        text: Manchester Scores Map
+      - href: OUT/TAB/manchester_lsoa_table.html
+        text: Manchester Scores Table
       - about.qmd
 
 format:
@@ -16,6 +27,3 @@ format:
       - brand
     css: styles.css
     toc: true
-
-
-
