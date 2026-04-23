@@ -14,10 +14,12 @@ website:
         text: Home
       - href: spatial_auditing.html
         text: Spatial Auditing method
-      - href: OUT/MAP/manchester_scores.html
-        text: Manchester Scores Map
+      - href: Spatial 
+        text: Manchester scores map
       - href: OUT/TAB/manchester_lsoa_table.html
-        text: Manchester Scores Table
+        text: Manchester scores table
+      - href: OUT/MAP/manchester_population.html
+        text: Manchester population map
       - about.qmd
 
 format:
