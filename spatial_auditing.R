@@ -90,13 +90,16 @@ osm_os = rbind(green_in,play_in) |>
   group_by(fclass) |>
   summarise(geom = st_union(geom))
 
+osm_os_trim = st_intersection(osm_os,geo_buf)
 
-tm_shape(geo_buf)+
+tm0 = tm_shape(geo_buf)+
   tm_polygons(alpha = 0,lwd = 3)+
-  tm_shape(osm_os) +
+  tm_shape(osm_os_trim) +
   tm_polygons(fill = "fclass",
               fill.scale = tm_scale_categorical())
 
+
+tmap_save(tm0, paste0("OUT/MAP/manchester_play.html"),selfcontained = TRUE)
 
 
 library(stats19)
