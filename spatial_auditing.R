@@ -194,13 +194,12 @@ bk_labels = as.character(seq(1,10))
 cra_breaks = seq(cas_max,0,length.out = 11)
 
 lsoa_scores = lsoa_total |> 
-  dplyr::mutate(play_score = cut(play_area,
-                                 breaks = ps_breaks, labels = bk_labels)) |> 
-  dplyr::mutate(crash_score = cut(rd_cas,
-                                  breaks = cra_breaks, labels = rev(bk_labels))) |> 
-  rowwise() |> 
-  mutate(total_score = sum(as.numeric(IMDDecil),as.numeric(play_score),as.numeric(crash_score)),
-         crash_play_score = sum(as.numeric(play_score),as.numeric(crash_score)))
+  mutate(play_score = as.numeric(as.character(cut(play_area,
+                                                  breaks = ps_breaks, labels = bk_labels)))) |> 
+  mutate(crash_score = as.numeric(as.character(cut(rd_cas,
+                                                   breaks = cra_breaks, labels = rev(bk_labels))))) |> 
+  mutate(total_score = IMDDecil + play_score + crash_score,
+         crash_play_score = play_score + crash_score)
 
 
 
@@ -299,6 +298,8 @@ tm1 <- tm1 +
 
 tm1
 
+tmap_save(tm1, paste0("OUT/MAP/manchester_scores.html"),selfcontained = TRUE)
+
 saveRDS(tm1,"OUT/MAP/manchester_scores.RDS")
 
 # full population data for lsoa areas
@@ -387,7 +388,7 @@ tm1 <- tm1 +
   # )+
   tm_view(control.collapse = FALSE,overlay.groups = geo_type[1])
 
-tm1
+tmap_save(tm1, paste0("OUT/MAP/manchester_population.html"),selfcontained = TRUE)
 
 saveRDS(tm1, paste0("OUT/MAP/manchester_pop_map.RDS"))
 
