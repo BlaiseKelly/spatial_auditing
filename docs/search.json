@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "spatial_auditing.html",
+    "href": "spatial_auditing.html",
+    "title": "Spatial Auditing",
     "section": "",
-    "text": "About this site"
+    "text": "Example using the Ward of Ardwick in the Local Authority (LA) of Manchester shown as the thin black line in the map below. Ward has been chosen as it is a lot smaller than LA, but large enough for a meaningful analysis.\nIn this example the assessment will be carried out at Lower Super Output Area (LSOA). This is the spatial level that the census is carried out at and it is also the highest resolution population data that is available open access from the government. Indicies of Multiple Deprevation (IMD) statistics are also released annually at this spatial resolution.\nThe map below shows the LSOAs within Ardwick, coloured by the IMD rank in the country (out of 33755, lower is more deprived). Data for the audit will be imported for a 1km radius from the border of each LSOA. This is shown as the thicker black line.\nFor this example the following data will be used as the measure of play spaces:\nOS data was downloaded from the portal and OSM data imported using the osmdata R package imported and trimed to the area.\nImporting road collisions from the STATS19 national police database for the last 5 years (2020 to 2024) using the STATS19 R package."
+  },
+  {
+    "objectID": "spatial_auditing.html#scoring",
+    "href": "spatial_auditing.html#scoring",
+    "title": "Spatial Auditing",
+    "section": "Scoring",
+    "text": "Scoring\nFor the area within each LSOA and 1km from the border, the total area of play spaces is calculated along with the total collisions.\nAn example below is shown for LSOA Manchester 020E, which ranks in the 2% of most deprived areas in Great Britain.\nThe border of the LSOA is shown as the thick black line. The collisions and play facilities are trimmed to the 1km radius from the border of the LSOA and the total collisions and play area in km2 summed up.\n\n\n\n\n\n\n\n\nIn total this LSOA has 0.67km2 of “play” space and 96 killed or seriously (KSI) casualties.\nApplying this to all LSOAs and applying a scoring system to the values.\nThe scoring for each LSOA is based on the IMD scale of 1-10, so play area and crashes scored on a scale of 1-10 by taking the max value of each and splitting it into 10 even levels from 0, where 10 is the best (IMD, lowest deprivation, crashes, the least crashes and play the highest play space).\n\n\n\n\n\n\nFor LSOA areas population data is available for every age and sex.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeighted summary by age and sex for the entire ward of Ardwick. In this area there are 1493 Boys age 14 to 18 and the weighted mean score is 14.9."
   },
   {
     "objectID": "index.html",

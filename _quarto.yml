@@ -3,7 +3,7 @@ project:
   output-dir: docs
   render:
     - index.qmd
-    - about.qmd
+    - spatial_auditing.qmd
 
 
 website:
@@ -12,15 +12,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: spatial_auditing.html
+      - href: spatial_auditing.qmd
         text: Spatial Auditing method
-      - href: Spatial 
+      - href: OUT/MAP/manchester_scores.html
         text: Manchester scores map
       - href: OUT/TAB/manchester_lsoa_table.html
         text: Manchester scores table
       - href: OUT/MAP/manchester_population.html
         text: Manchester population map
-      - about.qmd
 
 format:
   html:
