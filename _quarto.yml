@@ -20,6 +20,8 @@ website:
         text: Manchester scores table
       - href: OUT/MAP/manchester_population.html
         text: Manchester population map
+      - href: OUT/MAP/manchester_play.html
+        text: Manchester play map
 
 format:
   html:
